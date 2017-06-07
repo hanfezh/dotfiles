@@ -15,6 +15,8 @@ set ai         " set autoindent
 set si         " set smartindent
 set sm         " set showmatch
 set cino=:0g0t0(sus
+" for ctags
+set tags=tags
 
 syntax on
 
@@ -40,10 +42,26 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 
-" for ctags
-set tags=tags
+" filetype settings
+if has("autocmd")
+    " same to `filetype plugin indent on`
+    filetype on
+    filetype plugin on
+    filetype indent on
+    
+    " For all text files set ‘textwidth’ to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+    
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \ exe "normal g'\"" |
+                \ endif
+endif " has("autocmd")
 
-"""""""""""""""""" Personal Function setting """""""""""""""""""
+" personal function
 function! MyTitle()
 call setline(1, "/*****************************************************")
 call append(line("."), " * Author: zhuxianfeng")
@@ -52,32 +70,7 @@ call append(line(".")+2, " * Filename: ".expand("%"))
 call append(line(".")+3, " * Description: ")
 call append(line(".")+4, " *****************************************************/")
 endf
-map <Home> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o
-
-""""""""""""""""""""""""""""""""""" set autocmd """"""""""""""""""""""""""""
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets ‘tw’ set to 72,
-"‘cindent’ is on in C files, etc.
-" Also load indent files, to automatically do language-dependentindenting.
-filetype plugin indent on
-
-" For all text files set ‘textwidth’ to 78 characters.
-autocmd FileType text setlocal textwidth=78
-
-" When editing a file, always jump to the last known cursor position.
-" Don’t do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
-autocmd BufReadPost *
-\ if line("'\"") > 0 && line("'\"") <= line("$") |
-\ exe "normal g'\"" |
-\ endif
-
-endif " has("autocmd")
-
-" let glib_enable_deprecated = 1
+nnoremap <F8> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o
 
 let g:AutoComplPop_Behavior = {
 			\ 'c': [ {'command' : "\<C-x>\<C-o>",
@@ -140,34 +133,30 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " tagbar
-nmap <F2> :TagbarToggle<CR>
+nnoremap <silent> <F2> :TagbarToggle<CR>
 let g:tagbar_left = 1
-let g:tagbar_width = 30
+let g:tagbar_width = 32
 let g:tagbar_sort = 0
-" 启动时自动focus
-" let g:tagbar_autofocus = 1
-autocmd VimEnter * nested TagbarOpen
+autocmd VimEnter * nested :TagbarOpen
 
 " nerdtree
-" set runtimepath^=~/.vim/bundle/nerdtree
 let NERDTreeWinPos = "right"
-let NERDTreeWinSize = 30
+let NERDTreeWinSize = 32
 let NERDTreeShowLineNumbers=1
-map <F3> :NERDTreeToggle<CR>
-" autocmd vimenter * NERDTree
+nnoremap <F3> :NERDTreeToggle<CR>
+" autocmd VimEnter * nested :NERDTree
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " for BufExplorer
-map <F4> :BufExplorer<CR>
+nnoremap <F4> :BufExplorer<CR>
 
 " for ConqueTerm. zsh is too slow in vim.
 " map <F5> :ConqueTerm zsh<CR>
-map <F5> :ConqueTerm bash<CR>
+nnoremap <F5> :ConqueTerm bash<CR>
 
 " for ctrp
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
 " let g:ctrlp_map = '<leader>p'
 " let g:ctrlp_cmd = 'CtrlP'
 " map <leader>f :CtrlPMRU<CR>
@@ -188,22 +177,17 @@ let g:go_bin_path = expand("~/.vim/bundle/gotools")
 " easymotion
 let g:EasyMotion_leader_key = ','
 " map <Leader> <Plug>(easymotion-prefix)
-
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
-
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
-
 " Move to line
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
-
 " Move to word
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
-
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
