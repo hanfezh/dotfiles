@@ -116,12 +116,13 @@ Plugin 'L9'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'easymotion/vim-easymotion'
 " Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -148,7 +149,7 @@ let g:tagbar_sort = 0
 autocmd VimEnter * nested TagbarOpen
 
 " nerdtree
-set runtimepath^=~/.vim/bundle/nerdtree
+" set runtimepath^=~/.vim/bundle/nerdtree
 let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 30
 let NERDTreeShowLineNumbers=1
@@ -166,7 +167,7 @@ map <F4> :BufExplorer<CR>
 map <F5> :ConqueTerm bash<CR>
 
 " for ctrp
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" set runtimepath^=~/.vim/bundle/ctrlp.vim
 " let g:ctrlp_map = '<leader>p'
 " let g:ctrlp_cmd = 'CtrlP'
 " map <leader>f :CtrlPMRU<CR>
