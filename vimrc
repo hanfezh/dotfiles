@@ -1,4 +1,4 @@
-" common options
+" basic settings
 set nu         " set number
 set rnu        " set relativenumber
 set ts=4       " set tabstop=4
@@ -23,8 +23,7 @@ syntax on
 set wildmenu
 set wildmode=longest,list,full
 
-" show filename when editing
-" set statusline+=%f
+" status line
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 
@@ -38,8 +37,8 @@ nnoremap <space> viw
 inoremap <c-d> <esc>ddi
 inoremap jk <esc>
 " inoremap <esc> <nop>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 
 " filetype settings
@@ -49,8 +48,11 @@ if has("autocmd")
     filetype plugin on
     filetype indent on
     
-    " For all text files set ‘textwidth’ to 78 characters.
+    " For all text files set `textwidth` to 78 characters.
     autocmd FileType text setlocal textwidth=78
+
+    " Opening Vim help in a vertical split window.
+    autocmd FileType help wincmd L
     
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
@@ -71,13 +73,6 @@ call append(line(".")+3, " * Description: ")
 call append(line(".")+4, " *****************************************************/")
 endf
 nnoremap <F8> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o
-
-let g:AutoComplPop_Behavior = {
-			\ 'c': [ {'command' : "\<C-x>\<C-o>",
-			\ 'pattern' : ".",
-			\ 'repeat' : 0}
-			\ ]
-			\}
 
 " Vundle setup
 set nocompatible              " be iMproved, required
@@ -115,6 +110,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'easymotion/vim-easymotion'
+" Plugin 'OmniCppComplete'
 " Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
@@ -132,34 +128,52 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" tagbar
-nnoremap <silent> <F2> :TagbarToggle<CR>
+" AutoComplPop settings
+let g:AutoComplPop_Behavior = {
+			\ 'c': [ {'command' : "\<C-x>\<C-o>",
+			\ 'pattern' : ".",
+			\ 'repeat' : 0}
+			\ ]
+			\}
+
+" tagbar settings
 let g:tagbar_left = 1
 let g:tagbar_width = 32
 let g:tagbar_sort = 0
+nnoremap <silent> <F2> :TagbarToggle<CR>
 autocmd VimEnter * nested :TagbarOpen
 
-" nerdtree
+" nerdtree settings
 let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 32
 let NERDTreeShowLineNumbers=1
 nnoremap <F3> :NERDTreeToggle<CR>
 " autocmd VimEnter * nested :NERDTree
+" autocmd VimEnter * :wincmd p
+nnoremap <silent> <leader>r :NERDTreeFind<CR>
+nnoremap <silent> <C-i> :call NERDTreeToggleInCurDir()<CR>
+function! NERDTreeToggleInCurDir()
+    " If NERDTree is open in the current buffer
+    if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+        execute ":NERDTreeClose"
+    else
+        execute ":NERDTreeFind"
+    endif
+endfunction
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" for BufExplorer
+" BufExplorer settings
 nnoremap <F4> :BufExplorer<CR>
 
 " for ConqueTerm. zsh is too slow in vim.
 " map <F5> :ConqueTerm zsh<CR>
 nnoremap <F5> :ConqueTerm bash<CR>
 
-" for ctrp
+" ctrlp settings
 " let g:ctrlp_map = '<leader>p'
 " let g:ctrlp_cmd = 'CtrlP'
 " map <leader>f :CtrlPMRU<CR>
+nnoremap <C-r> :CtrlPBufTagAll<CR>
+nnoremap <C-e> :CtrlPTag<CR>
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
             \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
@@ -171,10 +185,10 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
-" vim-go
+" vim-go settings
 let g:go_bin_path = expand("~/.vim/bundle/gotools")
 
-" easymotion
+" easymotion settings
 let g:EasyMotion_leader_key = ','
 " map <Leader> <Plug>(easymotion-prefix)
 " Turn on case insensitive feature
