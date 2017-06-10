@@ -89,13 +89,14 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+" Plugin 'L9'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-syntastic/syntastic'
 " Plugin 'OmniCppComplete'
 " Plugin 'Valloric/YouCompleteMe'
 
@@ -182,3 +183,12 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
