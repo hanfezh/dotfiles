@@ -128,8 +128,7 @@ let NERDTreeShowLineNumbers=1
 nnoremap <F3> :NERDTreeToggle<CR>
 " autocmd VimEnter * nested :NERDTree
 " autocmd VimEnter * :wincmd p
-nnoremap <silent> <leader>r :NERDTreeFind<CR>
-nnoremap <silent> <C-i> :call NERDTreeToggleInCurDir()<CR>
+nnoremap <silent> <leader>r :call NERDTreeToggleInCurDir()<CR>
 function! NERDTreeToggleInCurDir()
     " If NERDTree is open in the current buffer
     if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
@@ -185,10 +184,10 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
