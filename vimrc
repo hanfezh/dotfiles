@@ -92,6 +92,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
@@ -137,6 +138,9 @@ function! NERDTreeToggleInCurDir()
         execute ":NERDTreeFind"
     endif
 endfunction
+
+" nerdcommenter settings
+let g:NERDSpaceDelims = 1
 
 " BufExplorer settings
 nnoremap <F4> :BufExplorer<CR>
