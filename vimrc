@@ -43,6 +43,19 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 
+" highlight settings
+noremap n :set hlsearch<CR>n
+noremap N :set hlsearch<CR>N
+noremap / :set hlsearch<CR>/
+noremap ? :set hlsearch<CR>?
+noremap * :set hlsearch<CR>*
+noremap # :set hlsearch<CR>#
+autocmd cursorhold * set nohlsearch
+nnoremap <C-h> :call SwitchHighlight()<CR>
+function! SwitchHighlight()
+    set hlsearch!
+endfunc
+
 " filetype settings
 if has("autocmd")
     " same to `filetype plugin indent on`
@@ -119,8 +132,11 @@ let g:AutoComplPop_Behavior = {
 let g:tagbar_left = 1
 let g:tagbar_width = 32
 let g:tagbar_sort = 0
+let g:tagbar_autofocus = 0
+let g:tagbar_show_linenumbers = 1
 nnoremap <silent> <F2> :TagbarToggle<CR>
 autocmd VimEnter * nested :TagbarOpen
+" autocmd VimEnter * if &diff ==# 0 | TagbarOpen | wincmd p | endif
 
 " nerdtree settings
 let NERDTreeWinPos = "right"
