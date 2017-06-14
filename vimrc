@@ -135,8 +135,8 @@ let g:tagbar_sort = 0
 let g:tagbar_autofocus = 0
 let g:tagbar_show_linenumbers = 1
 nnoremap <silent> <F2> :TagbarToggle<CR>
-autocmd VimEnter * nested :TagbarOpen
-" autocmd VimEnter * if &diff ==# 0 | TagbarOpen | wincmd p | endif
+autocmd VimEnter * if &diff ==# 0 && argc() != 0 | TagbarOpen | endif
+autocmd VimEnter * :wincmd p
 
 " nerdtree settings
 let NERDTreeWinPos = "right"
