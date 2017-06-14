@@ -78,6 +78,13 @@ if has("autocmd")
                 \ endif
 endif " has("autocmd")
 
+" enable alt key mapping
+" for i in range(97,122)
+"     let c = nr2char(i)
+"     execute "map \e".c." <M-".c.">"
+"     execute "map! \e".c." <M-".c.">"
+" endfor
+
 " personal function
 function! MyTitle()
 call setline(1, "/*****************************************************")
@@ -110,7 +117,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 " Plugin 'OmniCppComplete'
 " Plugin 'Valloric/YouCompleteMe'
 
@@ -169,8 +176,10 @@ nnoremap <F5> :ConqueTerm bash<CR>
 " let g:ctrlp_map = '<leader>p'
 " let g:ctrlp_cmd = 'CtrlP'
 " map <leader>f :CtrlPMRU<CR>
-nnoremap <C-r> :CtrlPBufTagAll<CR>
-nnoremap <C-e> :CtrlPTag<CR>
+execute "set <M-r>=\er"
+execute "set <M-e>=\ee"
+nnoremap <M-r> :CtrlPBufTagAll<CR>
+nnoremap <M-e> :CtrlPTag<CR>
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
             \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
