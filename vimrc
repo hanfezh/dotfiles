@@ -142,7 +142,7 @@ let g:tagbar_sort = 0
 let g:tagbar_autofocus = 0
 let g:tagbar_show_linenumbers = 1
 nnoremap <silent> <F2> :TagbarToggle<CR>
-autocmd VimEnter * if &diff ==# 0 && argc() != 0 | TagbarOpen | endif
+autocmd VimEnter * if &diff ==# 0 | TagbarOpen | endif
 autocmd VimEnter * :wincmd p
 
 " nerdtree settings
@@ -176,10 +176,10 @@ nnoremap <F5> :ConqueTerm bash<CR>
 " let g:ctrlp_map = '<leader>p'
 " let g:ctrlp_cmd = 'CtrlP'
 " map <leader>f :CtrlPMRU<CR>
-execute "set <M-r>=\er"
-execute "set <M-e>=\ee"
-nnoremap <M-r> :CtrlPBufTagAll<CR>
-nnoremap <M-e> :CtrlPTag<CR>
+execute "set <M-p>=\ep"
+execute "set <M-o>=\eo"
+nnoremap <M-p> :CtrlPBufTag<CR>
+nnoremap <M-o> :CtrlPTag<CR>
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
             \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
@@ -206,7 +206,7 @@ nmap <Leader>f <Plug>(easymotion-overwin-f)
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
 " Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
+map <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
