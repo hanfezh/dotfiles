@@ -178,8 +178,8 @@ nnoremap <F5> :ConqueTerm bash<CR>
 " map <leader>f :CtrlPMRU<CR>
 execute "set <M-p>=\ep"
 execute "set <M-m>=\em"
-nnoremap <M-p> :CtrlPBufTag<CR>
-nnoremap <M-m> :CtrlPTag<CR>
+nnoremap <M-p> :CtrlPTag<CR>
+nnoremap <M-m> :CtrlPBufTag<CR>
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
             \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
