@@ -177,9 +177,9 @@ nnoremap <F5> :ConqueTerm bash<CR>
 " let g:ctrlp_cmd = 'CtrlP'
 " map <leader>f :CtrlPMRU<CR>
 execute "set <M-p>=\ep"
-execute "set <M-o>=\eo"
+execute "set <M-m>=\em"
 nnoremap <M-p> :CtrlPBufTag<CR>
-nnoremap <M-o> :CtrlPTag<CR>
+nnoremap <M-m> :CtrlPTag<CR>
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
             \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
