@@ -57,26 +57,21 @@ function! SwitchHighlight()
 endfunc
 
 " filetype settings
-if has("autocmd")
-    " same to `filetype plugin indent on`
-    filetype on
-    filetype plugin on
-    filetype indent on
-    
-    " For all text files set `textwidth` to 78 characters.
-    autocmd FileType text setlocal textwidth=78
-
-    " Opening Vim help in a vertical split window.
-    autocmd FileType help wincmd L
-    
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                \ exe "normal g'\"" |
-                \ endif
-endif " has("autocmd")
+" same to `filetype plugin indent on`
+filetype on
+filetype plugin on
+filetype indent on
+" For all text files set `textwidth` to 78 characters.
+autocmd FileType text setlocal textwidth=78
+" Opening Vim help in a vertical split window.
+autocmd FileType help wincmd L
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \ exe "normal g'\"" |
+            \ endif
 
 " enable alt key mapping
 " for i in range(97,122)
@@ -173,8 +168,8 @@ nnoremap <F4> :BufExplorer<CR>
 nnoremap <F5> :ConqueTerm bash<CR>
 
 " ctrlp settings
-" let g:ctrlp_map = '<leader>p'
-" let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlP'
 " map <leader>f :CtrlPMRU<CR>
 execute "set <M-p>=\ep"
 execute "set <M-m>=\em"
