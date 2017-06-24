@@ -1,3 +1,7 @@
+" ufengzh's vimrc
+" https://github.com/ufengzh/vimrc
+" version 0.0.1
+
 " basic settings
 set nu         " set number
 set rnu        " set relativenumber
@@ -98,7 +102,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+" Specify a directory for vim-plug's plugins
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
@@ -111,6 +115,7 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
+" BufExplorer plugin
 Plug 'jlanzarotta/bufexplorer'
 " Files and code fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
@@ -183,7 +188,6 @@ nnoremap <F5> :ConqueTerm bash<CR>
 " ctrlp settings
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
-" map <leader>f :CtrlPMRU<CR>
 execute "set <M-p>=\ep"
 execute "set <M-m>=\em"
 nnoremap <M-p> :CtrlPTag<CR>
