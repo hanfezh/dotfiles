@@ -105,13 +105,30 @@ call plug#begin('~/.vim/plugged')
 
 " plugin on GitHub repo
 Plug 'tpope/vim-fugitive'
+" Tags browser
 Plug 'majutsushi/tagbar'
+" Files browser
 Plug 'scrooloose/nerdtree'
+" Code commenter
 Plug 'scrooloose/nerdcommenter'
 Plug 'jlanzarotta/bufexplorer'
+" Files and code fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
+" Extension to ctrlp, for fuzzy command finder
+Plug 'fisadev/vim-ctrlp-cmdpalette'
+" Go development
 Plug 'fatih/vim-go'
+" Motions on speed
 Plug 'easymotion/vim-easymotion'
+" Write and run programs for C/C++
+Plug 'vim-scripts/c.vim'
+" Alternate files quickly
+Plug 'vim-scripts/a.vim'
+" Automatically opens popup menu for completions
+Plug 'vim-scripts/AutoComplPop'
+" Airline
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
@@ -180,6 +197,10 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
+" ctrlp-cmdpalette settings
+let g:ctrlp_cmdpalette_execute = 1
+nnoremap ,c :CtrlPCmdPalette<CR>
+
 " vim-go settings
 let g:go_bin_path = expand("~/.vim/bundle/gotools")
 
@@ -209,3 +230,9 @@ map <Leader>k <Plug>(easymotion-k)
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+
+" Airline settings
+" let g:airline_theme = 'molokai'
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
