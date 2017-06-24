@@ -91,7 +91,7 @@ call append(line(".")+4, " *****************************************************
 endf
 nnoremap <F8> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o
 
-" Install vim-plug automaticlly
+" Install vim-plug automatically
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -126,6 +126,8 @@ Plug 'vim-scripts/c.vim'
 Plug 'vim-scripts/a.vim'
 " Automatically opens popup menu for completions
 Plug 'vim-scripts/AutoComplPop'
+" Smart cscope helper
+Plug 'brookhong/cscope.vim'
 " Airline
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -236,3 +238,27 @@ map <Leader>k <Plug>(easymotion-k)
 " let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" smart cscope settings
+nnoremap <Leader>fr :call ToggleLocationList()<CR>
+" s: Find this C symbol
+nnoremap <Leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap <Leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap <Leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap <Leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+" t: Find this text string
+nnoremap <Leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap <Leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap <Leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap <Leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+" Close location list automatically when file selected
+augroup QFClose
+    autocmd!
+    autocmd FileType qf nnoremap <buffer> <CR> <CR>:lcl<CR>
+augroup END
