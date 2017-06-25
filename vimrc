@@ -133,6 +133,10 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/AutoComplPop'
 " Smart cscope helper
 Plug 'brookhong/cscope.vim'
+" Fuzzy-search code completion
+Plug 'Valloric/YouCompleteMe'
+" Syntax checking hacks
+" Plug 'vim-syntastic/syntastic'
 " Airline
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -242,6 +246,9 @@ map <Leader>k <Plug>(easymotion-k)
 " let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" a.vim settings
+nnoremap <Leader>a :A<CR>
 
 " smart cscope settings
 nnoremap <Leader>fr :call ToggleLocationList()<CR>
