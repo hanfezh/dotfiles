@@ -40,7 +40,6 @@ set fileencodings=utf-8,gb18030,gbk
 " mapping key
 let mapleader = "."
 nnoremap <space> viw
-inoremap <c-d> <esc>ddi
 inoremap jk <esc>
 " inoremap <esc> <nop>
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
@@ -253,6 +252,7 @@ nnoremap <Leader>a :A<CR>
 
 " smart cscope settings
 nnoremap <Leader>fr :call ToggleLocationList()<CR>
+nnoremap <Leader>fu :call CscopeUpdateDB()<CR>
 " s: Find this C symbol
 nnoremap <Leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
 " g: Find this definition
