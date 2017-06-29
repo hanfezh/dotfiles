@@ -274,3 +274,9 @@ augroup QFClose
     autocmd!
     autocmd FileType qf nnoremap <buffer> <CR> <CR>:lcl<CR>
 augroup END
+
+" Tag file generated automatically
+augroup AutoTag
+    autocmd!
+    autocmd BufWritePost *.py,*.c,*.cpp,*.h silent! !eval 'ctags -R -o tags' &
+augroup END
