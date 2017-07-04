@@ -134,6 +134,8 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/AutoComplPop'
 " Smart cscope helper
 Plug 'brookhong/cscope.vim'
+" Tab insert completion 
+Plug 'ervandew/supertab'
 " Fuzzy-search code completion
 Plug 'Valloric/YouCompleteMe'
 " Syntax checking hacks
@@ -275,6 +277,9 @@ augroup QFClose
     autocmd!
     autocmd FileType qf nnoremap <buffer> <CR> <CR>:lcl<CR>
 augroup END
+
+" supertab settings
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Tag file generated automatically
 augroup AutoTag
