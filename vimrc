@@ -46,6 +46,7 @@ nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <Leader>h :execute "help " . expand('<cword>')<CR>
+nnoremap <Leader>s :update<CR>
 
 " highlight settings
 noremap n :set hlsearch<CR>n
