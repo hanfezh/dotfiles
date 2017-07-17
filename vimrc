@@ -47,6 +47,7 @@ nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <Leader>h :execute "help " . expand('<cword>')<CR>
 nnoremap <Leader>s :update<CR>
+nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>sh :shell<CR>
 
 " highlight settings
@@ -56,7 +57,10 @@ noremap / :set hlsearch<CR>/
 noremap ? :set hlsearch<CR>?
 noremap * :set hlsearch<CR>*
 noremap # :set hlsearch<CR>#
-autocmd cursorhold * set nohlsearch
+augroup AutoSearch
+    autocmd!
+    autocmd cursorhold * set nohlsearch
+augroup END
 nnoremap <C-h> :call SwitchHighlight()<CR>
 function! SwitchHighlight()
     set hlsearch!
@@ -67,17 +71,20 @@ endfunc
 filetype on
 filetype plugin on
 filetype indent on
-" For all text files set `textwidth` to 78 characters.
-autocmd FileType text setlocal textwidth=78
-" Opening Vim help in a vertical split window.
-autocmd FileType help wincmd L
-" When editing a file, always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside an event handler
-" (happens when dropping a file on gvim).
-autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \ exe "normal g'\"" |
-            \ endif
+augroup AutoFileType
+    autocmd!
+    " For all text files set `textwidth` to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+    " Opening Vim help in a vertical split window.
+    autocmd FileType help wincmd L
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \ exe "normal g'\"" |
+                \ endif
+augroup END
 
 " enable alt key mapping
 " for i in range(97,122)
@@ -163,16 +170,22 @@ let g:tagbar_sort = 0
 let g:tagbar_autofocus = 0
 let g:tagbar_show_linenumbers = 1
 nnoremap <silent> <F2> :TagbarToggle<CR>
-autocmd VimEnter * if &diff ==# 0 | TagbarOpen | endif
-autocmd VimEnter * :wincmd p
+augroup AutoTagbar
+    autocmd!
+    autocmd VimEnter * if &diff ==# 0 | TagbarOpen | endif
+    autocmd VimEnter * :wincmd p
+augroup END
 
 " nerdtree settings
 let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 32
 let NERDTreeShowLineNumbers=1
 nnoremap <F3> :NERDTreeToggle<CR>
-" autocmd VimEnter * nested :NERDTree
-" autocmd VimEnter * :wincmd p
+" augroup AutoNERDTree
+"     autocmd!
+"     autocmd VimEnter * nested :NERDTree
+"     autocmd VimEnter * :wincmd p
+" augroup END
 nnoremap <silent> <leader>r :call NERDTreeToggleInCurDir()<CR>
 function! NERDTreeToggleInCurDir()
     " If NERDTree is open in the current buffer
@@ -190,8 +203,8 @@ let g:NERDSpaceDelims = 1
 nnoremap <F4> :BufExplorer<CR>
 
 " for ConqueTerm. zsh is too slow in vim.
-" map <F5> :ConqueTerm zsh<CR>
-nnoremap <F5> :ConqueTerm bash<CR>
+nnoremap <F5> :ConqueTerm zsh<CR>
+" nnoremap <F5> :ConqueTerm bash<CR>
 
 " ctrlp settings
 let g:ctrlp_map = '<C-p>'
