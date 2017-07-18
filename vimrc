@@ -144,6 +144,8 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'brookhong/cscope.vim'
 " Tab insert completion 
 Plug 'ervandew/supertab'
+" Insert or delete brackets, parens, quotes in pair.
+Plug 'jiangmiao/auto-pairs'
 " Fuzzy-search code completion
 Plug 'Valloric/YouCompleteMe'
 " Syntax checking hacks
