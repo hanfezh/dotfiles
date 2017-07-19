@@ -181,14 +181,10 @@ augroup END
 " nerdtree settings
 let NERDTreeWinPos = "right"
 let NERDTreeWinSize = 32
-let NERDTreeShowLineNumbers=1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowLineNumbers = 1
 nnoremap <F3> :NERDTreeToggle<CR>
-" augroup AutoNERDTree
-"     autocmd!
-"     autocmd VimEnter * nested :NERDTree
-"     autocmd VimEnter * :wincmd p
-" augroup END
-nnoremap <silent> <leader>r :call NERDTreeToggleInCurDir()<CR>
+nnoremap <silent> <Leader>r :call NERDTreeToggleInCurDir()<CR>
 function! NERDTreeToggleInCurDir()
     " If NERDTree is open in the current buffer
     if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
@@ -203,6 +199,7 @@ let g:NERDSpaceDelims = 1
 
 " BufExplorer settings
 nnoremap <F4> :BufExplorer<CR>
+nnoremap <Leader>bf :BufExplorer<CR>
 
 " for ConqueTerm. zsh is too slow in vim.
 nnoremap <F5> :ConqueTerm zsh<CR>
