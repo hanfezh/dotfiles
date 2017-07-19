@@ -174,8 +174,9 @@ let g:tagbar_show_linenumbers = 1
 nnoremap <silent> <F2> :TagbarToggle<CR>
 augroup AutoTagbar
     autocmd!
-    autocmd VimEnter * if &diff ==# 0 | TagbarOpen | endif
+    autocmd VimEnter * if &diff == 0 && argc() != 0 | TagbarOpen | endif
     autocmd VimEnter * :wincmd p
+    autocmd FileType c,cpp,java,go,python nested :TagbarOpen
 augroup END
 
 " nerdtree settings
