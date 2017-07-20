@@ -21,8 +21,14 @@ set ai         " set autoindent
 set si         " set smartindent
 set sm         " set showmatch
 set cino=:0g0t0(sus
+
 " for ctags
 set tags=tags
+" tag file generated automatically
+augroup AutoTag
+    autocmd!
+    autocmd BufWritePost *.py,*.c,*.cpp,*.h silent! !eval 'ctags -R -o tags' &
+augroup END
 
 syntax on
 
@@ -295,8 +301,5 @@ augroup END
 " supertab settings
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" Tag file generated automatically
-augroup AutoTag
-    autocmd!
-    autocmd BufWritePost *.py,*.c,*.cpp,*.h silent! !eval 'ctags -R -o tags' &
-augroup END
+" auto-pairs settings
+let g:AutoPairsShortcutToggle = ''
