@@ -99,17 +99,6 @@ augroup END
 "     execute "map! \e".c." <M-".c.">"
 " endfor
 
-" personal function
-function! MyTitle()
-call setline(1, "/*****************************************************")
-call append(line("."), " * Author: zhuxianfeng")
-call append(line(".")+1, " * Time: ".strftime("%c"))
-call append(line(".")+2, " * Filename: ".expand("%"))
-call append(line(".")+3, " * Description: ")
-call append(line(".")+4, " *****************************************************/")
-endf
-nnoremap <F8> <Esc>:call MyTitle()<CR><Esc>:$<Esc>o
-
 " Install vim-plug automatically
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -154,11 +143,6 @@ Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 " Fuzzy-search code completion
 Plug 'Valloric/YouCompleteMe'
-" Syntax checking hacks
-" Plug 'vim-syntastic/syntastic'
-" Airline
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
@@ -254,21 +238,6 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-
-" syntastic settings
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" Airline settings
-" let g:airline_theme = 'molokai'
-" let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " a.vim settings
 nnoremap <Leader>a :A<CR>
