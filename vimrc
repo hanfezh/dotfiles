@@ -36,7 +36,7 @@ set wildmenu
 set wildmode=longest,list,full
 
 " status line
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}:%{&fenc==\"\"?&enc:&fenc}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 
 " file encoding
@@ -220,6 +220,10 @@ nnoremap ,c :CtrlPCmdPalette<CR>
 
 " vim-go settings
 let g:go_bin_path = expand("~/.vim/bundle/gotools")
+augroup AutoGoDecls
+    autocmd!
+    autocmd FileType go nnoremap <buffer> <M-m> :GoDecls<CR>
+augroup END
 
 " easymotion settings
 let g:EasyMotion_leader_key = ','
