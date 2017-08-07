@@ -107,7 +107,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " Specify a directory for vim-plug's plugins
-call plug#begin('~/.vim/plugged')
+silent! call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
