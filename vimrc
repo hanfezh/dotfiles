@@ -166,7 +166,7 @@ augroup AutoTagbar
     autocmd!
     autocmd VimEnter * if &diff == 0 && argc() != 0 | TagbarOpen | endif
     autocmd VimEnter * :wincmd p
-    autocmd FileType c,cpp,java,go,python nested :TagbarOpen
+    autocmd FileType c,cpp,java,go,python,sh nested :TagbarOpen
 augroup END
 
 " nerdtree settings
