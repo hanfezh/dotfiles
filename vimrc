@@ -199,10 +199,12 @@ nnoremap <F5> :ConqueTerm zsh<CR>
 " ctrlp settings
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
-execute "set <M-p>=\ep"
-execute "set <M-m>=\em"
-nnoremap <M-p> :CtrlPTag<CR>
-nnoremap <M-m> :CtrlPBufTag<CR>
+" execute "set <M-p>=\ep"
+" execute "set <M-m>=\em"
+" nnoremap <M-p> :CtrlPTag<CR>
+" nnoremap <M-m> :CtrlPBufTag<CR>
+nnoremap <S-p> :CtrlPTag<CR>
+nnoremap <S-m> :CtrlPBufTag<CR>
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
             \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
