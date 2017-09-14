@@ -201,10 +201,13 @@ nnoremap <F5> :ConqueTerm zsh<CR>
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " execute "set <M-p>=\ep"
+" execute "set <M-t>=\et"
 " execute "set <M-m>=\em"
-" nnoremap <M-p> :CtrlPTag<CR>
+" nnoremap <M-p> :CtrlPBuffer<CR>
+" nnoremap <M-t> :CtrlPTag<CR>
 " nnoremap <M-m> :CtrlPBufTag<CR>
-nnoremap <S-p> :CtrlPTag<CR>
+nnoremap <S-p> :CtrlPBuffer<CR>
+nnoremap <S-t> :CtrlPTag<CR>
 nnoremap <S-m> :CtrlPBufTag<CR>
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
