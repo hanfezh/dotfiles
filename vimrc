@@ -20,7 +20,7 @@ set is         " set incsearch
 set ai         " set autoindent
 set si         " set smartindent
 set sm         " set showmatch
-set cino=:0g0t0(susN-s " help cinoptions-values")
+set cino=:0g0t0(susN-si0 " help cinoptions-values"
 
 " for ctags
 set tags=tags
