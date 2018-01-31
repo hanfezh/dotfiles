@@ -228,8 +228,8 @@ nnoremap ,c :CtrlPCmdPalette<CR>
 let g:go_bin_path = expand("~/.vim/gotools")
 augroup AutoGoDecls
     autocmd!
-    autocmd FileType go nnoremap <buffer> <M-m> :GoDecls<CR>
-    autocmd FileType go nnoremap <buffer> <M-p> :GoDeclsDir<CR>
+    autocmd FileType go nnoremap <buffer> <S-m> :GoDecls<CR>
+    autocmd FileType go nnoremap <buffer> <S-p> :GoDeclsDir<CR>
 augroup END
 
 " easymotion settings
