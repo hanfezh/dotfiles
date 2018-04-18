@@ -20,7 +20,7 @@ set is         " set incsearch
 set ai         " set autoindent
 set si         " set smartindent
 set sm         " set showmatch
-set cino=:0g0t0(susN-si0 " help cinoptions-values"
+set cino=:0g0t0(susN-si0 " help cinoptions-values
 
 " for ctags
 set tags=tags
@@ -44,14 +44,14 @@ set fileencoding=utf-8
 set fileencodings=utf-8,gb18030,gbk
 
 " mapping key
-let mapleader = "."
+let mapleader = ","
 nnoremap <space> viw
 inoremap jk <esc>
 " inoremap <esc> <nop>
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <Leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap <Leader>h :execute "help " . expand('<cword>')<CR>
+nnoremap <Leader>hh :execute "help " . expand('<cword>')<CR>
 nnoremap <Leader>s :update<CR>
 nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>sh :shell<CR>
@@ -90,7 +90,7 @@ augroup AutoFileType
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \ exe "normal g'\"" |
                 \ endif
-	autocmd FileType bzl setlocal noexpandtab
+    autocmd FileType bzl setlocal noexpandtab
 augroup END
 
 " enable alt key mapping
@@ -142,8 +142,10 @@ Plug 'brookhong/cscope.vim'
 Plug 'ervandew/supertab'
 " Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
+" Java complete
+" Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 " Initialize plugin system
 call plug#end()
@@ -162,13 +164,35 @@ let g:tagbar_width = 32
 let g:tagbar_sort = 0
 let g:tagbar_autofocus = 0
 let g:tagbar_show_linenumbers = 1
-nnoremap <silent> <F2> :TagbarToggle<CR>
+" nnoremap <silent> <F2> :TagbarToggle<CR>
+nnoremap <silent> <F2> :call SwitchAutoTagBar()<CR>
 augroup AutoTagbar
     autocmd!
     autocmd VimEnter * if &diff == 0 && argc() != 0 | TagbarOpen | endif
     autocmd VimEnter * :wincmd p
-    autocmd FileType c,cpp,java,go,python,sh nested :TagbarOpen
+    autocmd FileType c,cpp,java,go,python,sh,javascript nested :TagbarOpen
 augroup END
+function! SwitchAutoTagBar()
+    if exists('t:tagbar_buf_name')
+        if bufwinnr(t:tagbar_buf_name) != -1
+            " Close the tagbar window
+            execute ":TagbarClose"
+            augroup AutoTagbar
+                autocmd!
+            augroup END
+            return
+        endif
+    endif
+
+    " Open the tagbar window
+    execute ":TagbarOpen"
+    augroup AutoTagbar
+        autocmd!
+        autocmd VimEnter * if &diff == 0 && argc() != 0 | TagbarOpen | endif
+        autocmd VimEnter * :wincmd p
+        autocmd FileType c,cpp,java,go,python,sh,javascript nested :TagbarOpen
+    augroup END
+endfunction
 
 " nerdtree settings
 let NERDTreeWinPos = "right"
@@ -222,7 +246,7 @@ let g:ctrlp_follow_symlinks=1
 
 " ctrlp-cmdpalette settings
 let g:ctrlp_cmdpalette_execute = 1
-nnoremap ,c :CtrlPCmdPalette<CR>
+nnoremap .c :CtrlPCmdPalette<CR>
 
 " vim-go settings
 let g:go_bin_path = expand("~/.vim/gotools")
@@ -233,7 +257,7 @@ augroup AutoGoDecls
 augroup END
 
 " easymotion settings
-let g:EasyMotion_leader_key = ','
+let g:EasyMotion_leader_key = '.'
 " map <Leader> <Plug>(easymotion-prefix)
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
