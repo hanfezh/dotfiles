@@ -130,8 +130,8 @@ Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'fatih/vim-go'
 " Motions on speed
 Plug 'easymotion/vim-easymotion'
-" Write and run programs for C/C++
-Plug 'vim-scripts/c.vim'
+" Support programming languages, like C/C++
+Plug 'WolfgangMehner/vim-plugins'
 " Alternate files quickly
 Plug 'vim-scripts/a.vim'
 " Automatically opens popup menu for completions
