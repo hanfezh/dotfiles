@@ -1,2 +1,3 @@
-# vimrc
-This is my personal vim configuration repository.
+# ufengzh's dotfiles
+
+This is my personal dotfiles, such as vimrc, tmux.conf, etc.
