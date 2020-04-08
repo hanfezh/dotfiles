@@ -142,6 +142,8 @@ Plug 'brookhong/cscope.vim'
 Plug 'ervandew/supertab'
 " Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
+" Display the indention levels
+Plug 'Yggdroot/indentLine'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
@@ -307,3 +309,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " auto-pairs settings
 let g:AutoPairsShortcutToggle = ''
+
+" Options for indentLine
+let g:indentLine_enabled = 0
+let g:indentLine_char = '·'
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 0
