@@ -1,7 +1,73 @@
-" ufengzh's vimrc
-" https://github.com/ufengzh/vimrc
-" version 0.0.1
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer: hanfezh <xianfeng.zhu@gmail.com>
+" Description: hanfezh's vimrc from https://github.com/hanfezh/dotfiles
+" Version: 0.0.1
+" Sections:
+"   - Install plugins
+"   - General settings
+"   - Status line
+"   - Editing mappings
+"   - Plugins settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Install plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Install vim-plug automatically
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for vim-plug's plugins
+silent! call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" plugin on GitHub repo
+Plug 'tpope/vim-fugitive'
+" Tags browser
+Plug 'majutsushi/tagbar'
+" Files browser
+Plug 'scrooloose/nerdtree'
+" Code commenter
+Plug 'scrooloose/nerdcommenter'
+" BufExplorer plugin
+Plug 'jlanzarotta/bufexplorer'
+" Files and code fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim'
+" Extension to ctrlp, for fuzzy command finder
+Plug 'fisadev/vim-ctrlp-cmdpalette'
+" Go development
+Plug 'fatih/vim-go'
+" Motions on speed
+Plug 'easymotion/vim-easymotion'
+" Support programming languages, like C/C++
+Plug 'WolfgangMehner/vim-plugins'
+" Alternate files quickly
+Plug 'vim-scripts/a.vim'
+" Automatically opens popup menu for completions
+Plug 'vim-scripts/AutoComplPop'
+" Smart cscope helper
+Plug 'brookhong/cscope.vim'
+" Tab insert completion 
+Plug 'ervandew/supertab'
+" Insert or delete brackets, parens, quotes in pair.
+Plug 'jiangmiao/auto-pairs'
+" Display the indention levels
+Plug 'Yggdroot/indentLine'
+" Java complete
+" Plug 'artur-shaik/vim-javacomplete2'
+" Fuzzy-search code completion
+" Plug 'Valloric/YouCompleteMe'
+
+" Initialize plugin system
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " basic settings
 set nu         " set number
 set rnu        " set relativenumber
@@ -35,14 +101,19 @@ syntax on
 set wildmenu
 set wildmode=longest,list,full
 
-" status line
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}:%{&fenc==\"\"?&enc:&fenc}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set laststatus=2
-
 " file encoding
 set fileencoding=utf-8
 set fileencodings=utf-8,gb18030,gbk
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}:%{&fenc==\"\"?&enc:&fenc}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set laststatus=2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Editing mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mapping key
 let mapleader = ","
 nnoremap <space> viw
@@ -100,58 +171,9 @@ augroup END
 "     execute "map! \e".c." <M-".c.">"
 " endfor
 
-" Install vim-plug automatically
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Specify a directory for vim-plug's plugins
-silent! call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" plugin on GitHub repo
-Plug 'tpope/vim-fugitive'
-" Tags browser
-Plug 'majutsushi/tagbar'
-" Files browser
-Plug 'scrooloose/nerdtree'
-" Code commenter
-Plug 'scrooloose/nerdcommenter'
-" BufExplorer plugin
-Plug 'jlanzarotta/bufexplorer'
-" Files and code fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
-" Extension to ctrlp, for fuzzy command finder
-Plug 'fisadev/vim-ctrlp-cmdpalette'
-" Go development
-Plug 'fatih/vim-go'
-" Motions on speed
-Plug 'easymotion/vim-easymotion'
-" Support programming languages, like C/C++
-Plug 'WolfgangMehner/vim-plugins'
-" Alternate files quickly
-Plug 'vim-scripts/a.vim'
-" Automatically opens popup menu for completions
-Plug 'vim-scripts/AutoComplPop'
-" Smart cscope helper
-Plug 'brookhong/cscope.vim'
-" Tab insert completion 
-Plug 'ervandew/supertab'
-" Insert or delete brackets, parens, quotes in pair.
-Plug 'jiangmiao/auto-pairs'
-" Display the indention levels
-Plug 'Yggdroot/indentLine'
-" Java complete
-" Plug 'artur-shaik/vim-javacomplete2'
-" Fuzzy-search code completion
-" Plug 'Valloric/YouCompleteMe'
-
-" Initialize plugin system
-call plug#end()
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AutoComplPop settings
 let g:AutoComplPop_Behavior = {
 			\ 'c': [ {'command' : "\<C-x>\<C-o>",
