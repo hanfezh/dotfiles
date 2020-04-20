@@ -30,9 +30,9 @@ Plug 'tpope/vim-fugitive'
 " Tags browser
 Plug 'majutsushi/tagbar'
 " Files browser
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 " Code commenter
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 " BufExplorer plugin
 Plug 'jlanzarotta/bufexplorer'
 " Files and code fuzzy finder
