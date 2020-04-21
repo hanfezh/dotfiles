@@ -57,6 +57,8 @@ Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 " Display the indention levels
 Plug 'Yggdroot/indentLine'
+" Python autocompletion
+Plug 'davidhalter/jedi-vim'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
