@@ -339,3 +339,6 @@ let g:indentLine_enabled = 0
 let g:indentLine_char = '·'
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 0
+
+" Disable renaming in jedi-vim
+let g:jedi#rename_command = ""
