@@ -163,7 +163,6 @@ augroup AutoFileType
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \ exe "normal g'\"" |
                 \ endif
-    autocmd FileType bzl setlocal noexpandtab
 augroup END
 
 " enable alt key mapping
