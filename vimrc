@@ -107,13 +107,6 @@ set wildmode=longest,list,full
 set fileencoding=utf-8
 set fileencodings=utf-8,gb18030,gbk
 
-" Automatic toggling between line number modes
-augroup NumberToggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
