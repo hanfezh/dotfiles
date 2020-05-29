@@ -88,7 +88,7 @@ set is         " set incsearch
 set ai         " set autoindent
 set si         " set smartindent
 set sm         " set showmatch
-set cino=:0g0t0(susN-si0 " help cinoptions-values
+set cino=:0,g0,t0,(0,us,N-s,i0 " help cinoptions-values
 
 " for ctags
 set tags=tags
