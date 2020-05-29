@@ -73,8 +73,8 @@ call plug#end()
 " basic settings
 set nu         " set number
 set rnu        " set relativenumber
-set ts=2       " set tabstop=2
-set sw=2       " set shiftwidth=2
+set ts=4       " set tabstop=4
+set sw=4       " set shiftwidth=4
 set et         " set expandtab
 set sta        " set smarttab
 set hi=1000    " set history=1000
@@ -88,7 +88,7 @@ set is         " set incsearch
 set ai         " set autoindent
 set si         " set smartindent
 set sm         " set showmatch
-set cino=g1,h1,i4,l1,m1,N-s,t0,us,W4,(0,:2 " help cinoptions-values
+set cino=g0,h4,i4,l1,m1,N-s,t0,us,W4,(0,:0 " help cinoptions-values
 
 " for ctags
 set tags=tags
