@@ -63,6 +63,8 @@ Plug 'hanfezh/pretty-json'
 " Airline plugin and themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Show diff plugin
+Plug 'mhinz/vim-signify'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
