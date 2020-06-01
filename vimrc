@@ -59,6 +59,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 " Python autocompletion
 Plug 'davidhalter/jedi-vim'
+" Pretty json text
+Plug 'hanfezh/pretty-json'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
