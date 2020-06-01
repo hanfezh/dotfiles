@@ -5,7 +5,6 @@
 " Sections:
 "   - Install plugins
 "   - General settings
-"   - Status line
 "   - Editing mappings
 "   - Plugins settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,6 +60,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'davidhalter/jedi-vim'
 " Pretty json text
 Plug 'hanfezh/pretty-json'
+" Airline plugin and themes
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
@@ -108,12 +110,6 @@ set wildmode=longest,list,full
 " file encoding
 set fileencoding=utf-8
 set fileencodings=utf-8,gb18030,gbk
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Status line
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}:%{&fenc==\"\"?&enc:&fenc}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing mappings
@@ -343,3 +339,6 @@ let g:indentLine_leadingSpaceEnabled = 0
 
 " Disable renaming in jedi-vim
 let g:jedi#rename_command = ""
+
+" Airline settings
+let g:airline_powerline_fonts = 1
