@@ -343,4 +343,5 @@ let g:indentLine_leadingSpaceEnabled = 0
 let g:jedi#rename_command = ""
 
 " Airline settings
+let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
