@@ -63,6 +63,8 @@ Plug 'hanfezh/pretty-json'
 " Airline plugin and themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Solarized colors cheme
+Plug 'altercation/vim-colors-solarized'
 " Show diff plugin
 Plug 'mhinz/vim-signify'
 " Java complete
@@ -344,3 +346,8 @@ let g:jedi#rename_command = ""
 
 " Airline settings
 let g:airline_powerline_fonts = 1
+
+" Solarized settins
+syntax enable
+set background=dark
+colorscheme solarized
