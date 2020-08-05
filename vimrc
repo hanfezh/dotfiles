@@ -65,6 +65,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Show diff plugin
 Plug 'mhinz/vim-signify'
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
@@ -89,6 +91,7 @@ set scs        " set smartcase
 set bs=2       " set backspace=indent,eol,start
 set hls        " set hlsearch
 set is         " set incsearch
+set scl=number " set signcolumn=number
 
 " c/c++ options
 set ai         " set autoindent
