@@ -46,8 +46,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'WolfgangMehner/vim-plugins'
 " Alternate files quickly
 Plug 'vim-scripts/a.vim'
-" Automatically opens popup menu for completions
-Plug 'vim-scripts/AutoComplPop'
 " Smart cscope helper
 Plug 'brookhong/cscope.vim'
 " Tab insert completion 
@@ -182,14 +180,6 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" AutoComplPop settings
-let g:AutoComplPop_Behavior = {
-			\ 'c': [ {'command' : "\<C-x>\<C-o>",
-			\ 'pattern' : ".",
-			\ 'repeat' : 0}
-			\ ]
-			\}
-
 " tagbar settings
 let g:tagbar_left = 1
 let g:tagbar_width = 32
