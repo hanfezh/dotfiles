@@ -116,6 +116,10 @@ set wildmode=longest,list,full
 set fileencoding=utf-8
 set fileencodings=utf-8,gb18030,gbk
 
+if has('nvim')
+    set inccommand=split
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
