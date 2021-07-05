@@ -69,6 +69,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
 " Plug 'Valloric/YouCompleteMe'
+" ClangFormat
+Plug 'rhysd/vim-clang-format'
 
 " Initialize plugin system
 call plug#end()
@@ -342,3 +344,7 @@ let g:jedi#rename_command = ""
 " Airline settings
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
+
+" ClangFormat, map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
