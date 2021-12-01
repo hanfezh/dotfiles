@@ -236,6 +236,9 @@ endfunction
 
 " nerdcommenter settings
 let g:NERDSpaceDelims = 1
+let g:NERDCustomDelimiters = {
+      \ 'python': { 'left': '#', 'right': '' }
+      \ }
 
 " BufExplorer settings
 nnoremap <F4> :BufExplorer<CR>
