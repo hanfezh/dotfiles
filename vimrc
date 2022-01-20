@@ -34,10 +34,9 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 " BufExplorer plugin
 Plug 'jlanzarotta/bufexplorer'
-" Files and code fuzzy finder
-Plug 'ctrlpvim/ctrlp.vim'
-" Extension to ctrlp, for fuzzy command finder
-Plug 'fisadev/vim-ctrlp-cmdpalette'
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " Go development
 Plug 'fatih/vim-go'
 " Motions on speed
@@ -248,32 +247,11 @@ nnoremap <Leader>bf :BufExplorer<CR>
 nnoremap <F5> :ConqueTerm zsh<CR>
 " nnoremap <F5> :ConqueTerm bash<CR>
 
-" ctrlp settings
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" execute "set <M-p>=\ep"
-" execute "set <M-t>=\et"
-" execute "set <M-m>=\em"
-" nnoremap <M-p> :CtrlPBuffer<CR>
-" nnoremap <M-t> :CtrlPTag<CR>
-" nnoremap <M-m> :CtrlPBufTag<CR>
-nnoremap <S-p> :CtrlPBuffer<CR>
-nnoremap <S-t> :CtrlPTag<CR>
-nnoremap <S-m> :CtrlPBufTag<CR>
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-            \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-            \ }
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=16
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_mruf_max=500
-let g:ctrlp_follow_symlinks=1
-
-" ctrlp-cmdpalette settings
-let g:ctrlp_cmdpalette_execute = 1
-nnoremap .c :CtrlPCmdPalette<CR>
+" fzf settings
+nnoremap <C-p> :Files<CR>
+nnoremap <S-p> :Buffers<CR>
+nnoremap <S-t> :BTags<CR>
+nnoremap <S-m> :BTags<CR>
 
 " vim-go settings
 let g:go_bin_path = expand("~/.vim/gotools")
