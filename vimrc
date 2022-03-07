@@ -64,6 +64,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-signify'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/jsonc.vim'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
@@ -169,6 +170,11 @@ augroup AutoFileType
                 \ if line("'\"") > 0 && line("'\"") <= line("$") |
                 \ exe "normal g'\"" |
                 \ endif
+augroup END
+
+" change filetype json -> jsonc
+augroup JsonToJsonc
+    autocmd! FileType json set filetype=jsonc
 augroup END
 
 " enable alt key mapping
