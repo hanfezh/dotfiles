@@ -105,6 +105,7 @@ set tags=tags
 augroup AutoTag
     autocmd!
     autocmd BufWritePost *.py,*.c,*.cpp,*.h silent! !eval 'ctags -R -o tags 1>/dev/null 2>&1' &
+    autocmd BufWritePost *.go silent! !eval 'gotags -f tags -R . 1>/dev/null 2>&1' &
 augroup END
 
 syntax on
