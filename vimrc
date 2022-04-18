@@ -293,7 +293,7 @@ nnoremap <S-m> :BTags<CR>
 let g:go_bin_path = expand("~/.vim/gotools")
 augroup AutoGoDecls
     autocmd!
-    autocmd FileType go set tabstop=4
+    autocmd FileType go setlocal tabstop=4 | setlocal shiftwidth=4
     autocmd FileType go nnoremap <buffer> <S-m> :GoDecls<CR>
     autocmd FileType go nnoremap <buffer> <S-p> :GoDeclsDir<CR>
 augroup END
