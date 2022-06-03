@@ -71,6 +71,8 @@ Plug 'neoclide/jsonc.vim'
 " Plug 'Valloric/YouCompleteMe'
 " ClangFormat
 Plug 'rhysd/vim-clang-format'
+" GitHub Copilot
+Plug 'github/copilot.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -290,7 +292,7 @@ nnoremap <S-t> :BTags<CR>
 nnoremap <S-m> :BTags<CR>
 
 " vim-go settings
-let g:go_bin_path = expand("~/.vim/gotools")
+let g:go_bin_path = expand("~/go/bin/")
 augroup AutoGoDecls
     autocmd!
     autocmd FileType go setlocal tabstop=4 | setlocal shiftwidth=4
