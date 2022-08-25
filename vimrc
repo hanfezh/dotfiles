@@ -306,10 +306,10 @@ let g:go_highlight_generate_tags = 1
 augroup AutoGoDecls
     autocmd!
     autocmd FileType go setlocal tabstop=4 | setlocal shiftwidth=4
+    autocmd FileType go nnoremap <buffer> <Leader>b  <Plug>(go-run)
     autocmd FileType go nnoremap <buffer> <S-m> :GoDecls<CR>
-    autocmd FileType go nnoremap <Leader>fc :GoCallers<CR>
     autocmd FileType go nnoremap <buffer> <Leader>g :GoBuildTags ''<CR>
-    autocmd FileType go nnoremap <Leader>fc :GoCallers<CR>
+    autocmd FileType go nnoremap <buffer> <Leader>fc :GoCallers<CR>
 augroup END
 
 " easymotion settings
