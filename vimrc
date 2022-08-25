@@ -294,10 +294,21 @@ nnoremap <S-m> :BTags<CR>
 
 " vim-go settings
 let g:go_bin_path = expand("~/go/bin/")
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
 augroup AutoGoDecls
     autocmd!
     autocmd FileType go setlocal tabstop=4 | setlocal shiftwidth=4
     autocmd FileType go nnoremap <buffer> <S-m> :GoDecls<CR>
+    autocmd FileType go nnoremap <Leader>fc :GoCallers<CR>
+    autocmd FileType go nnoremap <buffer> <Leader>g :GoBuildTags ''<CR>
     autocmd FileType go nnoremap <Leader>fc :GoCallers<CR>
 augroup END
 
