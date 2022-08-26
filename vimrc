@@ -308,7 +308,8 @@ augroup AutoGoDecls
     autocmd FileType go nnoremap <buffer> <Leader>b  <Plug>(go-run)
     autocmd FileType go nnoremap <buffer> <S-m> :GoDecls<CR>
     autocmd FileType go nnoremap <buffer> <Leader>g :GoBuildTags ''<CR>
-    autocmd FileType go nnoremap <buffer> <Leader>fc :GoCallers<CR>
+    autocmd FileType go nnoremap <buffer> <Leader>fc <Plug>(go-callers)
+    autocmd FileType go nnoremap <buffer> <Leader>fs <Plug>(go-referrers)
 augroup END
 
 " easymotion settings
