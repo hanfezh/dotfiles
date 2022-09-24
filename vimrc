@@ -292,6 +292,7 @@ nnoremap <C-p> :Files<CR>
 nnoremap <S-p> :Buffers<CR>
 nnoremap <S-t> :BTags<CR>
 nnoremap <S-m> :BTags<CR>
+nnoremap <Leader>t :Tags<CR>
 
 " vim-go settings
 let g:go_bin_path = expand("~/go/bin/")
