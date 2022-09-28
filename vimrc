@@ -107,9 +107,9 @@ set tags=tags
 " tag file generated automatically
 augroup AutoTag
     autocmd!
+    autocmd BufWritePost *.go silent! !eval 'gotags -f tags -R . 1>/dev/null 2>&1 &'
     autocmd BufWritePost * if count(['c', 'cpp', 'python'], &filetype) |
           \ silent! !eval 'ctags -o tags -R --exclude=build --exclude=deps 1>/dev/null 2>&1 &'
-    autocmd BufWritePost *.go silent! !eval 'gotags -f tags -R . 1>/dev/null 2>&1 &'
 augroup END
 
 syntax on
