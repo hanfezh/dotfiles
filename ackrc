@@ -1,1 +1,2 @@
 --pager=less -r
+--type-set=proto:ext:proto
