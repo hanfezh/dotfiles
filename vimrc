@@ -93,7 +93,7 @@ set scs        " set smartcase
 set bs=2       " set backspace=indent,eol,start
 set hls        " set hlsearch
 set is         " set incsearch
-silent! set scl=number " set signcolumn=number
+silent! set scl=auto   " set signcolumn=auto
 set aw         " set autowrite
 
 " c/c++ options
