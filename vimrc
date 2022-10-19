@@ -68,9 +68,11 @@ Plug 'neoclide/jsonc.vim'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
-" Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 " ClangFormat
 Plug 'rhysd/vim-clang-format'
+" Search tool ack
+Plug 'mileszs/ack.vim'
 " GitHub Copilot
 Plug 'github/copilot.vim'
 
