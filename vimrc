@@ -48,7 +48,7 @@ Plug 'vim-scripts/a.vim'
 " Smart cscope helper
 Plug 'brookhong/cscope.vim'
 " Tab insert completion 
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 " Insert or delete brackets, parens, quotes in pair.
 Plug 'jiangmiao/auto-pairs'
 " Display the indention levels
@@ -63,8 +63,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Show diff plugin
 Plug 'mhinz/vim-signify'
 " Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/jsonc.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/jsonc.vim'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
@@ -74,7 +74,7 @@ Plug 'rhysd/vim-clang-format'
 " Search tool ack
 Plug 'mileszs/ack.vim'
 " GitHub Copilot
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -298,7 +298,7 @@ nnoremap <Leader>t :Tags<CR>
 
 " vim-go settings
 let g:go_bin_path = expand("~/go/bin/")
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "gopls"
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -363,7 +363,7 @@ augroup QFClose
 augroup END
 
 " supertab settings
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " auto-pairs settings
 let g:AutoPairsShortcutToggle = ''
