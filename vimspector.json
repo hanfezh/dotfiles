@@ -1,0 +1,34 @@
+{
+  "configurations": {
+    "Go debug": {
+      "adapter": "delve",
+      "filetypes": [ "go" ],
+      "variables": {},
+      "configuration": {
+        "request": "launch",
+        "stopOnEntry": true,
+        "program": "${fileDirname}",
+        "buildFlags": "-tags=dynamic",
+        "mode": "debug",
+        "env": {
+          "PKG_CONFIG_PATH": "/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+        }
+      }
+    },
+    "Go test": {
+      "adapter": "delve",
+      "filetypes": [ "go" ],
+      "variables": {},
+      "configuration": {
+        "request": "launch",
+        "stopOnEntry": true,
+        "program": "${fileDirname}",
+        "buildFlags": "-tags=dynamic,mock",
+        "mode": "test",
+        "env": {
+          "PKG_CONFIG_PATH": "/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+        }
+      }
+    }
+  }
+}
