@@ -69,6 +69,8 @@ Plug 'mhinz/vim-signify'
 " Plug 'artur-shaik/vim-javacomplete2'
 " Fuzzy-search code completion
 Plug 'ycm-core/YouCompleteMe'
+" A multi-language debugging system
+Plug 'puremourning/vimspector'
 " ClangFormat
 Plug 'rhysd/vim-clang-format'
 " Search tool ack
@@ -387,3 +389,16 @@ set completeopt-=preview
 " ClangFormat, map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
+" Vimspector settings
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+nnoremap <Leader>di <Plug>VimspectorRunToCursor
+nnoremap <Leader>db <Plug>VimspectorBreakpoints
+nnoremap <Leader>dk <Plug>VimspectorRestart
+nnoremap <Leader>dh <Plug>VimspectorStepOut
+nnoremap <Leader>dl <Plug>VimspectorStepInto
+nnoremap <Leader>dj <Plug>VimspectorStepOver
