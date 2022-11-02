@@ -1,5 +1,18 @@
 {
   "configurations": {
+    "C/C++ debug - lldb": {
+      "adapter": "vscode-cpptools",
+      "filetypes": [ "cpp", "c", "objc", "rust" ],
+      "configuration": {
+        "request": "launch",
+        "program": "${workspaceFolder}/bin/xxx",
+        "args": ["--gtest_filter='XxxTest'"],
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": true,
+        "MIMode": "lldb"
+      }
+    },
     "Go debug": {
       "adapter": "delve",
       "filetypes": [ "go" ],
