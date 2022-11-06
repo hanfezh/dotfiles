@@ -27,7 +27,7 @@ silent! call plug#begin('~/.vim/plugged')
 " plugin on GitHub repo
 Plug 'tpope/vim-fugitive'
 " Tags browser
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 " Files browser
 Plug 'preservim/nerdtree'
 " Code commenter
@@ -202,64 +202,7 @@ let g:tagbar_width = 32
 let g:tagbar_sort = 0
 let g:tagbar_autofocus = 0
 let g:tagbar_show_linenumbers = 1
-" nnoremap <silent> <F2> :TagbarToggle<CR>
-nnoremap <silent> <F2> :call SwitchAutoTagBar()<CR>
-augroup AutoTagbar
-    autocmd!
-    autocmd VimEnter * if &diff == 0 && argc() != 0 | TagbarOpen | endif
-    autocmd VimEnter * :wincmd p
-    autocmd FileType c,cpp,java,go,python,sh,javascript nested :TagbarOpen
-augroup END
-function! SwitchAutoTagBar()
-    if exists('t:tagbar_buf_name')
-        if bufwinnr(t:tagbar_buf_name) != -1
-            " Close the tagbar window
-            execute ":TagbarClose"
-            augroup AutoTagbar
-                autocmd!
-            augroup END
-            return
-        endif
-    endif
-
-    " Open the tagbar window
-    execute ":TagbarOpen"
-    augroup AutoTagbar
-        autocmd!
-        autocmd VimEnter * if &diff == 0 && argc() != 0 | TagbarOpen | endif
-        autocmd VimEnter * :wincmd p
-        autocmd FileType c,cpp,java,go,python,sh,javascript nested :TagbarOpen
-    augroup END
-endfunction
-
-" support tagbar for golang by gotags
-let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
+nnoremap <silent> <F2> :TagbarToggle<CR>
 
 " nerdtree settings
 let NERDTreeWinPos = "right"
