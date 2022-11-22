@@ -1,2 +1,3 @@
 --pager=less -r
+--ignore-file=is:tags
 --type-set=proto:ext:proto
