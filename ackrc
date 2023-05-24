@@ -1,3 +1,4 @@
 --pager=less -r
 --ignore-file=is:tags
 --type-set=proto:ext:proto
+--type-set=thrift:ext:thrift
