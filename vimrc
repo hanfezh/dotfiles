@@ -99,6 +99,7 @@ set hls        " set hlsearch
 set is         " set incsearch
 silent! set scl=auto   " set signcolumn=auto
 set aw         " set autowrite
+set mouse=     " disable mouse
 
 " c/c++ options
 set ai         " set autoindent
