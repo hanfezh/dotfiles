@@ -77,6 +77,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'mileszs/ack.vim'
 " Adds file type icons to Vim plugins
 Plug 'ryanoasis/vim-devicons'
+" Add/delete/replace surroundings
+Plug 'machakann/vim-sandwich'
 " GitHub Copilot
 " Plug 'github/copilot.vim'
 
