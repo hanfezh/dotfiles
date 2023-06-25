@@ -75,6 +75,8 @@ Plug 'puremourning/vimspector'
 Plug 'rhysd/vim-clang-format'
 " Search tool ack
 Plug 'mileszs/ack.vim'
+" Adds file type icons to Vim plugins
+Plug 'ryanoasis/vim-devicons'
 " GitHub Copilot
 " Plug 'github/copilot.vim'
 
