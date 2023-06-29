@@ -81,6 +81,8 @@ Plug 'mileszs/ack.vim'
 Plug 'ryanoasis/vim-devicons'
 " Add/delete/replace surroundings
 Plug 'machakann/vim-sandwich'
+" The fancy start screen
+Plug 'mhinz/vim-startify'
 " GitHub Copilot
 " Plug 'github/copilot.vim'
 
