@@ -57,6 +57,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'davidhalter/jedi-vim'
 " Pretty json text
 Plug 'hanfezh/pretty-json'
+" Open git file via browser
+Plug 'hanfezh/open-git-file'
 " Airline plugin and themes
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
