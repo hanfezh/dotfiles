@@ -274,7 +274,7 @@ augroup AutoGoDecls
 augroup END
 
 " easymotion settings
-let g:EasyMotion_leader_key = '.'
+let g:EasyMotion_leader_key = ','
 " map <Leader> <Plug>(easymotion-prefix)
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
