@@ -6,6 +6,7 @@ This is my personal dotfiles, such as vimrc, tmux.conf, etc.
 - [clang-format](./clang-format): `${HOME}/.clang-format`
 - [gdbinit](./gdbinit): `${HOME}/.gdbinit`
 - [gitconfig](./gitconfig): `${HOME}/.gitconfig`
+- [gitignore\_global](./gitignore_global) `${HOME}/.gitignore_global`
 - [init.vim](./init.vim): `${HOME}/.config/nvim/init.vim`
 - [tmux.conf](./tmux.conf): `${HOME}/.tmux.conf`
 - [vimrc](./vimrc): `${HOME}/.vimrc`
