@@ -358,3 +358,12 @@ nnoremap <Leader>dk <Plug>VimspectorRestart
 nnoremap <Leader>dh <Plug>VimspectorStepOut
 nnoremap <Leader>dl <Plug>VimspectorStepInto
 nnoremap <Leader>dj <Plug>VimspectorStepOver
+
+" Startify settings
+let g:startify_lists = [
+      \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+      \ { 'type': 'files',     'header': ['   MRU']            },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ ]
