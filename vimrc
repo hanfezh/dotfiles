@@ -83,6 +83,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'machakann/vim-sandwich'
 " The fancy start screen
 Plug 'mhinz/vim-startify'
+" Syntax highlighting for thrift
+Plug 'solarnz/thrift.vim'
 " GitHub Copilot
 " Plug 'github/copilot.vim'
 
