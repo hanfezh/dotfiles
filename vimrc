@@ -343,6 +343,7 @@ let g:airline_powerline_fonts = 1
 " YouCompleteMe settings
 set completeopt-=preview
 let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_disable_for_files_larger_than_kb = 0
 
 " ClangFormat, map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
