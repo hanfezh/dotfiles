@@ -54,7 +54,7 @@ Plug 'jiangmiao/auto-pairs'
 " Display the indention levels
 Plug 'Yggdroot/indentLine'
 " Python autocompletion
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 " Pretty json text
 Plug 'hanfezh/pretty-json'
 " Open git file via browser
