@@ -259,7 +259,7 @@ nnoremap <S-m> :BTags<CR>
 nnoremap <Leader>t :Tags<CR>
 
 " Colorscheme
-colorscheme tokyonight
+colorscheme tokyonight-night
 
 " vim-go settings
 let g:go_bin_path = expand("~/go/bin/")
