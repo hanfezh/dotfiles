@@ -37,8 +37,8 @@ Plug 'jlanzarotta/bufexplorer'
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" TokyoNight colorscheme
-Plug 'folke/tokyonight.nvim'
+" Solarized colorscheme
+Plug 'lifepillar/vim-solarized8'
 " Go development
 Plug 'fatih/vim-go'
 " Motions on speed
@@ -259,7 +259,7 @@ nnoremap <S-m> :BTags<CR>
 nnoremap <Leader>t :Tags<CR>
 
 " Colorscheme
-colorscheme tokyonight-night
+colorscheme solarized8
 
 " vim-go settings
 let g:go_bin_path = expand("~/go/bin/")
