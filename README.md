@@ -11,4 +11,5 @@ This is my personal dotfiles, such as vimrc, tmux.conf, etc.
 - [tmux.conf](./tmux.conf): `${HOME}/.tmux.conf`
 - [vimrc](./vimrc): `${HOME}/.vimrc`
 - [vimspector.json](./vimspector.json): `${YOUR_PROJECT}/.vimspector.json`
-
+- [config/nvim/init.vim](./config/nvim/init.vim): `${YOUR_PROJECT}/.config/nvim/init.vim`
+- [config/nvim/coc-settings.json](./config/nvim/coc-settings.json): `${YOUR_PROJECT}/.config/nvim/coc-settings.json`

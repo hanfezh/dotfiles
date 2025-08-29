@@ -67,7 +67,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Show diff plugin
 Plug 'mhinz/vim-signify'
 " Use release branch (recommend)
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/jsonc.vim'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
@@ -346,14 +346,17 @@ let g:jedi#rename_command = ""
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 
+" Coc.nvim settings
+" GoTo code navigation
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
+
 " YouCompleteMe settings
 set completeopt-=preview
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_disable_for_files_larger_than_kb = 0
-augroup AutoYcmDecls
-    autocmd!
-    autocmd FileType go nnoremap <buffer> <Leader>jd :YcmCompleter GoToDefinition<CR>
-augroup END
 
 " ClangFormat, map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
