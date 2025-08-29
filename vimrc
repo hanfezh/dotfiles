@@ -271,6 +271,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
+let g:go_def_mapping_enabled = 0
 augroup AutoGoDecls
     autocmd!
     autocmd FileType go nnoremap <buffer> <Leader>b  <Plug>(go-run)
@@ -349,6 +350,10 @@ let g:airline_powerline_fonts = 1
 set completeopt-=preview
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_disable_for_files_larger_than_kb = 0
+augroup AutoYcmDecls
+    autocmd!
+    autocmd FileType go nnoremap <buffer> <C-]> :YcmCompleter GoToDefinition<CR>
+augroup END
 
 " ClangFormat, map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
