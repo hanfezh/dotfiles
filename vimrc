@@ -348,6 +348,22 @@ let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 
 " Coc.nvim settings
+" <C-]>: push current spot to *tag stack*, then Coc go-to-definition
+function! s:CocDefWithTagStack() abort
+  " Push current position to tag stack
+  let l:item = {'tagname': expand('<cword>'), 'from': [bufnr('%'), line('.'), col('.'), 0]}
+  let l:stk = gettagstack(win_getid())
+  call settagstack(win_getid(), {'items': [l:item], 'curidx': l:stk.length + 1}, 'a')
+
+  " Jump to definition
+  call CocActionAsync('jumpDefinition')
+
+  " Center line after jump (small delay to handle async)
+  call timer_start(30, {-> execute('normal! zz')})
+endfunction
+
+nnoremap <silent> <C-]> :call <SID>CocDefWithTagStack()<CR>
+
 " GoTo code navigation
 nmap <silent><nowait> gd <Plug>(coc-definition)
 nmap <silent><nowait> gy <Plug>(coc-type-definition)
