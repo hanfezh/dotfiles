@@ -87,6 +87,8 @@ Plug 'machakann/vim-sandwich'
 Plug 'mhinz/vim-startify'
 " Syntax highlighting for thrift
 Plug 'solarnz/thrift.vim'
+" Plugin for cppman
+Plug 'gauteh/vim-cppman'
 " GitHub Copilot
 " Plug 'github/copilot.vim'
 
