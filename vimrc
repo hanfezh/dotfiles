@@ -377,7 +377,7 @@ set completeopt-=preview
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_disable_for_files_larger_than_kb = 0
 " Don't let YCM handle Go (coc-go will handle it instead)
-let g:ycm_filetype_blacklist = { 'go': 1 }
+" let g:ycm_filetype_blacklist = { 'go': 1 }
 
 " ClangFormat, map to <Leader>cf in C++ code
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
