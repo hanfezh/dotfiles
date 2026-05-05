@@ -48,7 +48,7 @@ Plug 'WolfgangMehner/vim-plugins'
 " Alternate files quickly
 Plug 'vim-scripts/a.vim'
 " Smart cscope helper
-Plug 'brookhong/cscope.vim'
+" Plug 'brookhong/cscope.vim'
 " Tab insert completion 
 " Plug 'ervandew/supertab'
 " Insert or delete brackets, parens, quotes in pair.
@@ -67,7 +67,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Show diff plugin
 Plug 'mhinz/vim-signify'
 " Use release branch (recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/jsonc.vim'
 " Java complete
 " Plug 'artur-shaik/vim-javacomplete2'
@@ -273,8 +273,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
-let g:go_def_mapping_enabled = 0
-let g:go_code_completion_enabled = 0
+let g:go_def_mapping_enabled = 1
+let g:go_code_completion_enabled = 1
 augroup AutoGoDecls
     autocmd!
     autocmd FileType go nnoremap <buffer> <Leader>b  <Plug>(go-run)
@@ -364,13 +364,13 @@ function! s:CocDefWithTagStack() abort
   call timer_start(30, {-> execute('normal! zz')})
 endfunction
 
-nnoremap <silent> <C-]> :call <SID>CocDefWithTagStack()<CR>
+" nnoremap <silent> <C-]> :call <SID>CocDefWithTagStack()<CR>
 
 " GoTo code navigation
-nmap <silent><nowait> gd <Plug>(coc-definition)
-nmap <silent><nowait> gy <Plug>(coc-type-definition)
-nmap <silent><nowait> gi <Plug>(coc-implementation)
-nmap <silent><nowait> gr <Plug>(coc-references)
+" nmap <silent><nowait> gd <Plug>(coc-definition)
+" nmap <silent><nowait> gy <Plug>(coc-type-definition)
+" nmap <silent><nowait> gi <Plug>(coc-implementation)
+" nmap <silent><nowait> gr <Plug>(coc-references)
 
 " YouCompleteMe settings
 set completeopt-=preview
